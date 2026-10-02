@@ -11,6 +11,10 @@ import {
     Crosshair,
     Eye,
     Activity,
+    Dices,
+    ArrowRight,
+    Shield,
+    Zap,
     type LucideProps
 } from 'lucide-react';
 import { StarIcon } from '../components/icons/StarIcon';
@@ -28,5 +32,9 @@ export const iconMap: Record<string, React.FC<LucideProps>> = {
     Crosshair,
     Eye,
     Activity,
+    Dices,
+    ArrowRight,
+    Shield,
+    Zap,
     StarIcon
 };

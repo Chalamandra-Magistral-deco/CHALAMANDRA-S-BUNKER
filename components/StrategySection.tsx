@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { StrategyTactic } from '../types';
+import { StrategyTactic, RealityCheck } from '../types';
+import { iconMap } from '../mappings/iconMap';
 
 interface StrategySectionProps {
     strategies: StrategyTactic[];
-    realityChecks: { title: string; content: string; icon: React.ElementType }[];
+    realityChecks: RealityCheck[];
     playClickSound: () => void;
 }
 
@@ -21,7 +22,8 @@ const StrategySection: React.FC<StrategySectionProps> = ({ strategies, realityCh
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {strategies.map((s) => {
-            const Icon = s.icon;
+            const Icon = iconMap[s.icon];
+            if (!Icon) return null;
             return (
               <div key={s.id} className="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:bg-gray-800/70 transition-all duration-300 shadow-xl hover:shadow-fuchsia-500/10">
                 <div className="flex items-center mb-4">
@@ -52,7 +54,8 @@ const StrategySection: React.FC<StrategySectionProps> = ({ strategies, realityCh
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {realityChecks.map((r, index) => {
-                const Icon = r.icon;
+                const Icon = iconMap[r.icon];
+                if (!Icon) return null;
                 const isActive = activeCheck === index;
                 return (
                     <button 

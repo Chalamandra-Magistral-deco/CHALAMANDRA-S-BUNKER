@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChessPiece } from '../types';
 import { iconMap } from '../mappings/iconMap';
 import { useTactical } from '../context/TacticalContext';
+import { generateCounterStrategy } from '../services/geminiService';
 
 interface PieceDetailProps {
   piece: ChessPiece;

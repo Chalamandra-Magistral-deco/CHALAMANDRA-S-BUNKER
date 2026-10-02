@@ -8,7 +8,7 @@ export interface ChessPiece {
   chessFunction: string;
   criminalFunction: string;
   riskLevel: 'Critical' | 'High' | 'Medium' | 'Low';
-  icon: LucideIcon | string;
+  icon: string;
   color: string;
 }
 
@@ -17,7 +17,13 @@ export interface StrategyTactic {
   title: string;
   chessConcept: string;
   criminalConcept: string;
-  icon: LucideIcon;
+  icon: string;
+}
+
+export interface RealityCheck {
+  title: string;
+  content: string;
+  icon: string;
 }
 
 export interface TacticalState {
